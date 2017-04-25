@@ -1,5 +1,6 @@
 udemyDeepLearningPy/courseCode
 handsOn/*/checkpoint
+__pycache__
 .ipynb_checkpoints
 *.txt
 *.ckpt.*
