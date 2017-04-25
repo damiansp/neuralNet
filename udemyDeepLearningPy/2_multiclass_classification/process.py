@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-def get_data(datapath):
+def get_data(datapath = '../courseCode/ann_logistic_extra/ecommerce_data.csv'):
     df = pd.read_csv(datapath)
     data = df.as_matrix()
     
@@ -17,7 +17,7 @@ def get_data(datapath):
     X2 = np.zeros((N, D + 3))
     X2[:, 0:(D - 1)] = X[:, 0:(D - 1)]
     
-    for n in xrange(N):
+    for n in range(N):
         t = int(X[n, D - 1])
         X2[n, t + D - 1]
         
