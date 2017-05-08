@@ -4,6 +4,7 @@ tf_logs
 __pycache__
 .ipynb_checkpoints
 *.txt
+*.jpg
 *.ckpt.*
 *~
 
