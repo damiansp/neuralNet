@@ -9,4 +9,5 @@ __pycache__
 *.ckpt.*
 *~
 
+kadenze/3_unsupervised_supervised/MNIST_data/
 
