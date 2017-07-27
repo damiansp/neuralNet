@@ -1,6 +1,6 @@
 udemyDeepLearningPy/courseCode
-handsOn/*/checkpoint
-kadenze/*/checkpoint
+checkpoint
+.DS_Store
 tf_logs
 __pycache__
 .ipynb_checkpoints
@@ -9,6 +9,9 @@ __pycache__
 *.png
 *.ckpt.*
 *~
+*.index
+*.meta
+*.data-*
 
 kadenze/3_unsupervised_supervised/MNIST_data/
 
