@@ -12,6 +12,6 @@ __pycache__
 *.index
 *.meta
 *.data-*
-
+data
 kadenze/3_unsupervised_supervised/MNIST_data/
 
