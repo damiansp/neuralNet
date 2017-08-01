@@ -13,5 +13,6 @@ __pycache__
 *.meta
 *.data-*
 data
-kadenze/3_unsupervised_supervised/MNIST_data/
+logistic_logs
+MNIST_data
 
