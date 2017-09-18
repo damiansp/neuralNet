@@ -13,6 +13,6 @@ __pycache__
 *.meta
 *.data-*
 data
-logistic_logs
+*_logs
 MNIST_data
 
