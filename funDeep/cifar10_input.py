@@ -11,7 +11,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# ==============================================================================
+#
+# Deprecated code updated by Damian Satterthwaite-Phillips
+#=============================================================================
 """Routine for decoding the CIFAR-10 binary file format."""
 
 from __future__ import absolute_import
@@ -165,7 +167,7 @@ def distorted_inputs(data_dir, batch_size):
                                              lower=0.2, upper=1.8)
 
   # Subtract off the mean and divide by the variance of the pixels.
-  float_image = tf.image.per_image_whitening(distorted_image)
+  float_image = tf.image.per_image_standardization(distorted_image)
 
   # Ensure that the random shuffling has good mixing properties.
   min_fraction_of_examples_in_queue = 0.4
@@ -179,7 +181,7 @@ def distorted_inputs(data_dir, batch_size):
   images, labels = _generate_image_and_label_batch(
       float_image, read_input.label, min_queue_examples, batch_size)
 
-  tf.image_summary('distorted_images', images)
+  tf.summary.image('distorted_images', images)
 
   return images, labels
 
@@ -222,7 +224,7 @@ def inputs(eval_data, data_dir, batch_size):
                                                          width, height)
 
   # Subtract off the mean and divide by the variance of the pixels.
-  float_image = tf.image.per_image_whitening(resized_image)
+  float_image = tf.image.per_image_standardization(resized_image)
 
   # Ensure that the random shuffling has good mixing properties.
   min_fraction_of_examples_in_queue = 0.4
@@ -233,7 +235,7 @@ def inputs(eval_data, data_dir, batch_size):
   images, labels = _generate_image_and_label_batch(
       float_image, read_input.label, min_queue_examples, batch_size)
 
-  tf.image_summary('val_images', images)
+  tf.summary.image('val_images', images)
 
   return images, labels
 
