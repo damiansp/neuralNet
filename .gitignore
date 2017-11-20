@@ -15,4 +15,8 @@ __pycache__
 data
 *_logs
 MNIST_data
+<<<<<<< HEAD
 resources
+=======
+course_repo
+>>>>>>> 3e288a5b95f028d59b01e985ef1592c3fec572b6
