@@ -1,8 +1,8 @@
 .DS_Store
+*~
 
 # Ignore downloaded datasets
 embeddings/data/
-embeddings/text8.zip
 face_generation/data/
 
 .ipynb_checkpoints/
@@ -14,3 +14,4 @@ face_generation/data/
 
 */.floyd*
 
+*.zip
