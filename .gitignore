@@ -22,6 +22,8 @@ __pycache__
 *.json
 *.jpg
 *.png
+*.midi
+*.mp3
 
 *.index
 *.meta
