@@ -52,3 +52,12 @@ metrics
 
 network %>% predict_classes(test.images[1:10, ])
 
+x <- array(rep(0, 2 * 3 * 2), dim=c(2, 3, 2))
+str(x)
+dim(x) # 3D tensor
+
+
+
+# 2.3 Tensor Operations
+
+
