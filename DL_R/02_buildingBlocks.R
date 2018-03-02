@@ -59,5 +59,16 @@ dim(x) # 3D tensor
 
 
 # 2.3 Tensor Operations
+z <- c(-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5)
+pmax(z, 0)
+
+x <- array(round(runif(1000, 0, 9)), dim=c(64, 3, 32, 10))
+y <- array(5, dim=c(32, 10))
+z <- sweep(x, c(3, 4), y, pmax) # to x's 3rd and 4th dims, apply pmax against y
 
 
+# 2.3.4 Tensor Reshaping
+train.images <- array_reshape(train.images, c(60000, 28*28))
+(x <- matrix(c(0:7), nrow=4, ncol=2))
+(x <- array_reshape(x, dim=c(8, 1)))
+(x <- array_reshape(x, dim=c(2, 2, 2)))
