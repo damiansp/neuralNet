@@ -4,6 +4,7 @@
 # Ignore downloaded datasets
 embeddings/data/
 face_generation/data/
+RL-Quadcopter/
 
 .ipynb_checkpoints/
 
