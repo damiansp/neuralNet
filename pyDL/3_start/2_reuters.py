@@ -51,7 +51,7 @@ mod.add(Dense(64, activation='relu'))
 mod.add(Dense(N_CLASSES, activation='softmax'))
 
 mod.compile(
-    optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
+    optimizer='rmsprop', loss='categorical_crossentropy', metrics=['acc'])
 
 history = mod.fit(X_train,
                   Y_train,
