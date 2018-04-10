@@ -25,4 +25,4 @@ plt.ylabel('Electricity Consumption')
 plt.xlabel('Time (x15min)')
 plt.show()
 
-np.save(DATA_DIR, 'electrictyConsumption.npy', np.array(data))
+np.save(DATA_DIR + 'electricityConsumption.npy', np.array(data))
