@@ -33,4 +33,4 @@ __pycache__
 # Directories
 data
 MNIST_data
-
+dl4j*
