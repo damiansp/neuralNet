@@ -1,29 +1,35 @@
 # OS
+#===
 .DS_Store
 *~
 
 
 # Jupyter
+#========
 .ipynb_checkpoints
 
 
 # Tensorflow
+#===========
 checkpoint
 *.ckpt.*
 tf_logs
 
 
 # Python
+#=======
 __pycache__
 
 
 # File types
+#===========
 *.txt
 *.json
 *.jpg
 *.png
 *.midi
 *.mp3
+*.iml
 
 *.index
 *.meta
@@ -31,6 +37,10 @@ __pycache__
 *_logs
 
 # Directories
+#============
 data
 MNIST_data
 dl4j*
+.idea
+.idea.bak
+out/
