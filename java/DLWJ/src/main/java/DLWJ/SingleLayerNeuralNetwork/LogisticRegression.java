@@ -90,7 +90,7 @@ public class LogisticRegression {
 
 
   public static void main(String[] args) {
-    final Random rand = new Random(1103);
+    final Random rand = new Random(110376);
     final int CLASSES = 3;
     final int N_TRAIN = 400 * CLASSES;
     final int N_TEST  =  60 * CLASSES;
@@ -100,7 +100,7 @@ public class LogisticRegression {
     final int BATCH = 64;
     final int N_BATCHES = N_TRAIN / BATCH;
     double learningRate = 0.2;
-    double[][] xTrain = new double[N_TEST][N_IN];
+    double[][] xTrain = new double[N_TRAIN][N_IN];
     int[][] yTrain = new int[N_TRAIN][N_OUT];
     double[][] xTest = new double[N_TEST][N_IN];
     Integer[][] yTest = new Integer[N_TEST][N_OUT];
@@ -152,9 +152,9 @@ public class LogisticRegression {
       yTrain[i] = new int[]{0, 0, 1};
     }
     for (int i = 2*N_TEST/CLASSES - 1; i < N_TEST; i++) {
-      xTest[i][0] = g1.random();
-      xTest[i][1] = g2.random();
-      yTest[i] = new Integer[]{1, 0, 0};
+      xTest[i][0] = g3.random();
+      xTest[i][1] = g3.random();
+      yTest[i] = new Integer[]{0, 0, 1};
     }
 
     // Create mini-batches with training data
