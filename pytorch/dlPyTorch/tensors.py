@@ -1,8 +1,10 @@
 import numpy as np
+import sklearn.datasets
 import torch
 
 from PIL import Image
 
+boston = sklearn.datasets.load_boston()
 
 # Scalars
 x = torch.rand(10)
@@ -22,3 +24,10 @@ print(vec, vec.size())
 #panda_tensor = torch.from_numpy(panda)
 #panda_tensor.size()
 #plt.imshow(panda)
+
+# Slicing Tensors
+sales = torch.FloatTensor(
+    [1000., 323.2, 333.4, 444.5, 1000., 323.2, 333.4, 444.5])
+print(sales[:5])
+print(sales[:-5])
+plt.imshow(panda_tensor
