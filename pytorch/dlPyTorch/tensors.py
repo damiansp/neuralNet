@@ -1,3 +1,4 @@
+from glob import glob
 import matplotlib.pyplot as plt
 import numpy as np
 import sklearn.datasets
@@ -40,3 +41,33 @@ plt.imshow(me_tensor[:, :, 2].numpy())
 plt.show()
 
 
+# 4D Tensors (+batch)
+faces = glob('/Users/dsatterthwaite/repos/scripts-analytics/faces/images/raw/'
+             + '*.jpg')
+# To np arrays
+face_imgs = np.array([np.array(Image.open(face).resize([224, 224]))
+                      for face in faces[:64]])
+face_imgs = face_imgs.reshape(-1, 224, 224, 3)
+face_tensor = torch.from_numpy(face_imgs)
+print(face_tensor.size())
+
+
+# Tensors on GPU
+a = torch.rand(2, 2)
+b = torch.rand(2, 2)
+c = a + b
+d = torch.add(a, b)
+a.add_(b) # in place
+
+print(a*b)
+print(a.mul(b))
+print(a.mul_(b)) # in place
+
+# Cuda
+a = torch.rand(10000, 10000)
+b = torch.rand(10000, 10000)
+a.matmul(b)
+
+#a = a.cuda()
+#b = b.cuda()
+#a.matmul(b)
