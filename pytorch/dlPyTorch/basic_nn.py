@@ -22,5 +22,22 @@ def get_weights():
     return W, b
 
 
+def simple_network(x):
+    y_pred = torch.matmul(x, W) + b
+    return y_pred
 
+
+def loss_fn(y, y_pred):
+    loss = (y_pred - y).pow(2).sum()
+    for param in [W, b]:
+        if param.grad is not None:
+            param.grad.data.zero_()
+    loss.backward()
+    return loss.data[0]
+
+
+def optimize(learning_rate):
+    W.data -= learning_rate * W.grad.data
+    b.data -= learning_rate * b.grad.data
+    
         
