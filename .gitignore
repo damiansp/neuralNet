@@ -23,18 +23,19 @@ __pycache__
 
 # File types
 #===========
-*.txt
+*_logs
+*.data-*
+*.iml
+*.index
 *.json
 *.jpg
-*.png
+*.meta
 *.midi
 *.mp3
-*.iml
+*.png
+*.pt
+*.txt
 
-*.index
-*.meta
-*.data-*
-*_logs
 
 # Directories
 #============
