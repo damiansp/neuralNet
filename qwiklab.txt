@@ -1,0 +1,27 @@
+BUCKET = 'qwiklabs-gcp-175b0af320baca9a' #'cloud-training-demos-ml'
+PROJECT = 'cloud-training-demos'
+REGION = 'us-west1-b' #'us-central1'
+
+
+# Create SQL query using natality data after the year 2000
+import google.datalab.bigquery as bq
+
+query = """
+SELECT
+  weight_pounds,
+  is_male,
+  mother_age,
+  plurality,
+  gestation_weeks
+FROM
+  publicdata.samples.natality
+WHERE year > 2000 AND MOD(ABS(FARM_FINGERPRINT(CONCAT(CAST(YEAR AS STRING), CAST(month AS STRING)))), 10) %s
+""" + use RAND()
+
+
+df_train = bq.Query(query % '< 8').execute().result().to_dataframe()
+df_train.head()
+
+df_test = bq.Query(query % '>= 8').excute().result().to_dataframe()
+df_train.shape, df_test.shape
+
