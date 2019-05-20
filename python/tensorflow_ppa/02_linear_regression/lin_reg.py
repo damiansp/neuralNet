@@ -33,3 +33,17 @@ sess.run(init)
 for i in range(EPOCHS):
     sess.run(train)
     print(f'{i}: W: {sess.run(W)}, b: {sess.run(b)}, loss: {sess.run(loss)}')
+
+with tf.name_scope('LinearRegression') as scope:
+    W = tf.Variable(tf.random_uniform([1], -1., 1.), name='W')
+    b = tf.Variable(tf.zeros([1]))
+    y = W*xs + b
+
+with tf.name_scope('LossFunction') as scope:
+    loss = tf.reduce_mean(tf.square(y - ys))
+
+loss_summary = tf.summary.scalar('loss', loss)
+w_ = tf.summary.histogram('W', W)
+b_ = tf.summary.histogram('b', b)
+merged_op = tf.summary.merge_all()
+writer_tensorboard = tf.summary.FileWriter('.', sess.graph_def)
