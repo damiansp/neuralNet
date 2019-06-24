@@ -40,9 +40,11 @@ __pycache__
 
 # Directories
 #============
-data
-MNIST_data
-dl4j*
 .idea
 .idea.bak
+data
+dl4j*
+lr/
+MNIST_data
 out/
+svm/
