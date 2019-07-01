@@ -44,7 +44,6 @@ __pycache__
 .idea.bak
 data
 dl4j*
-lr/
 MNIST_data
 out/
-svm/
+mod_outputs
