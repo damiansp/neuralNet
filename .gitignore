@@ -11,8 +11,9 @@
 
 # Tensorflow
 #===========
-checkpoint
 *.ckpt.*
+*.tfrecords
+checkpoint
 tf_logs
 
 
@@ -24,6 +25,7 @@ __pycache__
 # File types
 #===========
 *_logs
+*.csv
 *.data-*
 *.iml
 *.index
@@ -36,6 +38,7 @@ __pycache__
 *.png
 *.pt
 *.txt
+
 
 
 # Directories
