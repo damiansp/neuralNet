@@ -38,6 +38,7 @@ __pycache__
 *.png
 *.pt
 *.txt
+*.hdf5
 
 
 
