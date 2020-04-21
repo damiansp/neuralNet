@@ -22,6 +22,11 @@ tf_logs
 __pycache__
 
 
+# Dirs
+#=====
+*log_dir/
+
+
 # File types
 #===========
 *_logs
