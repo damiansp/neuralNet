@@ -7,3 +7,9 @@ function doStuff(a, b) {
   print(dox)
 }
 ```
+*bold*
+
+**bold**
+
+> try this?
+> hmm?
