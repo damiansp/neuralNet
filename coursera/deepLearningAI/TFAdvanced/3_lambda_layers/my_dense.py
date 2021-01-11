@@ -1,8 +1,9 @@
 # Extending TF's Layer class example
 class SimpleDense(Layer):
-    def __init__(self, units=32):
+    def __init__(self, units=32, activation=None):
         super(SimpleDense, self).__init__()
         self.units = units
+        self.activation = tf.keras.activations.get(activation)
 
     def build(self, input_shape):
         # Create the state of the layer (weights)
@@ -20,7 +21,7 @@ class SimpleDense(Layer):
 
     def call(self, inputs):
         # Computations in forward pass
-        return tf.matmul(inputs, self.w) + self.b
+        return self.activation(tf.matmul(inputs, self.w) + self.b)
 
 
 my_dense = SimpleDense(units=1)
