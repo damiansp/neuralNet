@@ -25,6 +25,7 @@ __pycache__
 # Dirs
 #=====
 *log_dir/
+ref_repo/
 
 
 # File types
