@@ -10,6 +10,7 @@ N_CLASSES = 10
 DENSE_NODES = 64
 BATCH = 64
 BUFFER = 1024 # amt loaded into memory at a time
+EPOCHS = 20
 
 
 def main():
@@ -21,6 +22,12 @@ def main():
     test = test_data.batch(batch_size=BATCH)
     loss = Scxe()
     optimizer = Adam()
+    mod = base_model()
+    for epoch in range(EPOCHS):
+        loss_train = train_data_for_one_epoch()
+        loss_val = perform_validation()
+        mean_loss_train = np.mean(loss_train)
+        mean_loss_val = np.mean(loss_val)
 
 
 def format_image(data):
@@ -40,3 +47,10 @@ def base_model():
     return mod
 
 
+def train_data_for_one_epoch():
+    losses = []
+    for step, (X_batch_train, y_batch_train) in enumerate(train_dataset):
+        logits, loss = apply_gradient(
+            optimizer, mod, X_batch_train, y_batch_train)
+        losses.append(loss)
+    return losses
