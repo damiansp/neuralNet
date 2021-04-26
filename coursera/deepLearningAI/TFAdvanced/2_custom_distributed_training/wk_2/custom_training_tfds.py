@@ -39,7 +39,7 @@ def format_image(data):
 
 
 def base_model():
-    inputs = Input(shape=784,), name='clothing')
+    inputs = Input(shape=(784,), name='clothing')
     x = Dense(DENSE_NODES, activation='relu', name='dense_1')(inputs)
     x = Dense(DENSE_NODES, activation='relu', name='dense_2')(x)
     outputs = Dense(N_CLASSES, activation='softmax', name='predictions')(x)
@@ -53,4 +53,22 @@ def train_data_for_one_epoch():
         logits, loss = apply_gradient(
             optimizer, mod, X_batch_train, y_batch_train)
         losses.append(loss)
+    return losses
+
+
+def apply_gradient(optimizer, mod, X, y):
+    with tf.GradientTape() as t:
+        logits = mod(X)
+        loss = get_loss(y=y, preds=logits)
+    grads = t.gradient(loss, mod.trainable_weights)
+    optimizer.apply_gradiens(zip(grads, mod.trainable_weights))
+    return logts, loss
+
+
+def perform_validation():
+    losses = []
+    for X_val, y_val in test:
+        val_logits = mod(X_val)
+        val_loss = get_loss(y=y_val, preds=val_logits)
+        losses.append(val_loss)
     return losses
